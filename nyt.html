@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <!-- google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tinos&display=swap" rel="stylesheet">
+    <!-- google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="nyt.css">
+    <script defer src="nyt.js"></script>
+    <title>NYT API</title>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="row mt-5">
+                <div class="col-12 text-center">
+                    <a href="nyt.html"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/NewYorkTimes.svg/2560px-NewYorkTimes.svg.png" class="img-fluid logo" alt="NewYorkTimes Logo"></a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-lg-9 mt-3">
+                    <!-- display currentTime -->
+                    <div id="currentTime"></div>
+                    <div id="sectionTitle" class="sectionTitle"></div>
+                </div>
+                <div class="col-12 col-lg-3 text-end">
+                    <!-- search section bar -->
+                    <div class="input-group">
+                        <select class="form-select form-select-sm" id="article-section" data-article-section>
+                        </select>
+                        <label class="input-group-text" for="article-section">Article</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr class="text-primary border-3">
+    </header>
+
+    <main>
+        <div class="container mb-5">
+            <div class="row">
+                <!-- <div class="col-12">
+                    <div id="sectionTitle" class="sectionTitle">
+                    </div>
+                </div> -->
+                <div class="col-12 col-xl-6 mt-3">
+                    <!-- top 2 articles -->
+                    <div class="article-0 mb-5">
+                        <h2 class="fw-bold"><a id="newsTitle-0" href=''></a></h2>
+                        <div class="img-container">
+                            <img src="" alt="" id="img-0" class="img-fluid main">
+                            <div class="bottom-left bg-dark bg-opacity-75 p-3 titleSection-0"></div>
+                        </div>
+                        <figcaption class="figure-caption" id="copyright-0"></figcaption>
+                        <p class="fs-4" id="abstract-0"></p>
+                    </div>
+                    <hr class="text-primary">
+                    <div class="article-1 mt-4">
+                        <h2 class="fw-bold"><a id="newsTitle-1" href=''></a></h2>
+                        <div class="img-container">
+                            <img src="" alt="" id="img-1" class="img-fluid main">
+                            <div class="bottom-left bg-dark bg-opacity-75 p-3 titleSection-1"></div>
+                        </div>
+                        <figcaption class="figure-caption" id="copyright-1"></figcaption>
+                        <p class="fs-4" id="abstract-1"></p>
+                    </div>
+                </div>
+                <!-- article in aside -->
+                <div class="col-12 col-xl-6 my-3">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12 col-lg-6 article-2 mb-5">
+                                <div class="img-container">
+                                    <img src="" alt="" id="img-2" class="img-fluid article">
+                                    <div class="bottom-left bg-dark bg-opacity-75 p-3 titleSection-2"></div>
+                                </div>
+                                <figcaption class="figure-caption" id="copyright-2"></figcaption>
+                            </div>
+                            <div class="col-12 col-lg-6">
+                                <div class="contents mt-2">
+
+                                    <h5 class="fw-bold"><a id="newsTitle-2" href=''></a></h5>
+                                    <p id="abstract-2"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-lg-6 article-3 mb-5">
+                                <div class="img-container">
+                                    <img src="" alt="" id="img-3" class="img-fluid article">
+                                    <div class="bottom-left bg-dark bg-opacity-75 p-3 titleSection-3"></div>
+                                </div>
+                                <figcaption class="figure-caption" id="copyright-3"></figcaption>
+                            </div>
+                            <div class="col-12 col-lg-6">
+                                <div class="contents mt-2">
+                                    <h5 class="fw-bold"><a id="newsTitle-3" href=''></a></h5>
+                                    <p id="abstract-3"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-lg-6 article-4 mb-5">
+                                <div class="img-container">
+                                    <img src="" alt="" id="img-4" class="img-fluid article">
+                                    <div class="bottom-left bg-dark bg-opacity-75 p-3 titleSection-4"></div>
+                                </div>
+                                <figcaption class="figure-caption" id="copyright-4"></figcaption>
+                            </div>
+                            <div class="col-12 col-lg-6">
+                                <div class="contents mt-2">
+                                    <h5 class="fw-bold"><a id="newsTitle-4" href=''></a></h5>
+                                    <p id="abstract-4"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-lg-6 article-5 mb-5">
+                                <div class="img-container">
+                                    <img src="" alt="" id="img-5" class="img-fluid article">
+                                    <div class="bottom-left bg-dark bg-opacity-75 p-3 titleSection-5"></div>
+                                </div>
+                                <figcaption class="figure-caption" id="copyright-5"></figcaption>
+                            </div>
+                            <div class="col-12 col-lg-6">
+                                <div class="contents mt-2">
+                                    <h5 class="fw-bold"><a id="newsTitle-5" href=''></a></h5>
+                                    <p id="abstract-5"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-lg-6 article-6 mb-5">
+                                <div class="img-container">
+                                    <img src="" alt="" id="img-6" class="img-fluid article">
+                                    <div class="bottom-left bg-dark bg-opacity-75 p-3 titleSection-6"></div>
+                                </div>
+                                <figcaption class="figure-caption" id="copyright-6"></figcaption>
+                            </div>
+                            <div class="col-12 col-lg-6">
+                                <div class="contents mt-2">
+                                    <h5 class="fw-bold"><a id="newsTitle-6" href=''></a></h5>
+                                    <p id="abstract-6"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr class="text-primary">
+                <!-- the rest of top articles second row -->
+                <h2>More News</h2>
+                <div data-article></div>
+            </div>
+        </div>
+    </main>
+
+
+
+    <footer>
+        <div class="container mt-3">
+            <div class="row">
+                <div class="col-12 text-center my-3 text-white">
+                    <footer>&copy;2023 Emiri Sato</footer>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+body{
+    /* background:#eae3d9; */
+    font-family:'Times New Roman', Times, serif;
+    color: #172a3c;
+}
+
+.logo{
+    height: 60px;
+}
+
+.main{
+    width: 800px;
+}
+
+.img-container{
+    position: relative;
+    /* text-align: start; */
+    color: white;
+}
+
+.bottom-left {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+}
+
+.form-select{
+    border-radius: 50px;
+    /* background-color: #eae3d9; */
+    border-color: black;
+}
+.input-group-text{
+    border-radius: 50px;
+    background-color: #172a3c;
+    border-color:#172a3c;
+    color:white;
+}
+
+a{
+    text-decoration: none;
+    color: #172a3c;
+}
+a:hover{
+    text-decoration: underline;
+}
+
+.card:hover{
+    box-shadow: inset;
+}
+
+.sectionTitle{
+    font-family: 'Abril Fatface', cursive;}
+
+footer{
+    background: #172a3c;
+}
