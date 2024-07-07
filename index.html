@@ -26,21 +26,22 @@
 
 <body>
     <header>
-        <div class="container-fluid p-4" style="background-color:#172a3c;">
+        <div class="container-fluid" style="background-color:#172a3c;">
             <div class="row">
-                <div class="col-12 d-flex flex-wrap justify-content-around">
-                    <div class="date text-light align-self-end">
+                <div class="col-12 d-flex flex-wrap justify-content-between p-2">
+                    <!-- <div class="date text-light align-self-end">
                         <div id="currentTime"></div>
-                        <div id="sectionTitle" class="sectionTitle"></div>
+                    </div> -->
+                    <div class="header-title ms-2">
+                        <a class="text-decoration-none text-light" href="index.html">
+                            <h1>New York Times</h1>
+                        </a>
                     </div>
-                    <div class="header-title">
-                        <a class="text-decoration-none text-light" href="index.html"><h1>New York Times</h1></a>
-                    </div>
-                    <div class="col-12 col-md-8 col-lg-3 align-self-center">
+                    <div class="col-12 col-sm-6 col-md-4 align-self-center me-3 mb-2">
                         <div class="input-group">
                             <select class="form-select form-select-sm" id="article-section" data-article-section>
                             </select>
-                            <label class="input-group-text" for="article-section">Article</label>
+                            <label class="input-group-text border" for="article-section">Article</label>
                         </div>
                     </div>
                 </div>
@@ -77,8 +78,17 @@
     <!-- header section ends -->
     <main>
         <div class="container mb-5">
+            <div class="row mt-3">
+                <div class="col">
+                    <div class="date">
+                        <div id="currentTime"></div>
+                    </div>
+                    <div id="sectionTitle" class="sectionTitle"></div>
+                </div>
+                <hr class="text-danger-emphasis">
+            </div>
             <div class="row">
-                <div class="col-12 col-xl-8">
+                <div class="col-12 col-xl-7">
                     <!-- top 2 articles -->
                     <div class="article-0 my-3">
                         <h2 class="fw-bold"><a id="newsTitle-0" href=''></a></h2>
@@ -101,7 +111,7 @@
                     </div>
                 </div>
                 <!-- article in aside -->
-                <div class="col-12 col-xl-4 my-3">
+                <div class="col-12 col-xl-5 my-3">
                     <div class="container">
                         <div class="row">
                             <div class="col-12 col-lg-6 article-2 mb-5">

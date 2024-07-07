@@ -1,18 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Baskervville+SC&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600&display=swap');
+
+
 body{
     /* background:#eae3d9; */
-    font-family:'Times New Roman', Times, serif;
+    font-family: "Baskervville SC", serif;
+    font-weight: 400;
+    font-style: normal;
     color: #172a3c;
 }
 
-.new-rocker-regular {
-    font-family: "New Rocker", system-ui;
-    font-weight: 400;
-    font-style: normal;
-}
 
 .header-title{
-    font-family: "New Rocker", system-ui;
+    /* font-family: "New Rocker", system-ui; */
+    font-family: "Playfair Display", serif;
+    /* font-optical-sizing: auto; */
+    font-weight: 600;
+    font-style: italic;
 }
+
+.header-title h1{
+    font-size: 4rem;
+}
+
 
 .logo{
     height: 60px;
@@ -68,3 +79,4 @@ a:hover{
 footer{
     background: #172a3c;
 }
+
