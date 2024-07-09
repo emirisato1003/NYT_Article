@@ -1,8 +1,9 @@
 /* script.js */
-const articleSection = document.getElementById('article-section');
+const articleSection = document.querySelector('[data-article-section]');
 const result = document.querySelector('#article');
 const dataArticle = document.querySelector('[data-article]');
 const date = document.querySelector('#currentTime');
+const sectionTitle = document.getElementById('sectionTitle');
 
 // function to get nyt section for select form
 const getNytSection = (data) => {
@@ -15,11 +16,10 @@ const getNytSection = (data) => {
 
 // function to get selected article from select form
 const getSelectedSectionArticle = (data) => {
-    const sectionTitle = document.getElementById('sectionTitle');
+    console.log(data);
     sectionTitle.innerHTML = `<h1>${data.results[0].section}</h1>`;
-    // new way
-    data.results.slice(0, 7).forEach((result, i) => {
-        // console.log(result)
+
+    data.results.slice(0, 8).forEach((result, i) => {
         if (result.multimedia?.[2]?.url || result.title || result.abstract) {
             const newsTitle = document.querySelector(`#newsTitle-${i}`);
             newsTitle.href = result.url;
@@ -31,6 +31,8 @@ const getSelectedSectionArticle = (data) => {
 
             const abstract = document.querySelector(`#abstract-${i}`);
             abstract.innerHTML = result.abstract.length > 100 ? `${result.abstract.substring(0, 80)}...` : result.abstract;
+            const titleSection = document.querySelector(`.titleSection-${i}`);
+            titleSection.style.display = 'none';
         }
     });
 
@@ -72,9 +74,10 @@ const truncateText = (text, maxLength) =>
 
 // function to get top articles for home page
 const getTopStoriesHome = (data) => {
-    // console.log(data.results[0].section)
+    // console.log(data.results[0])
     // show article in the main
-    data.results.slice(0, 7).forEach((result, i) => {
+    data.results.slice(0, 8).forEach((result, i) => {
+        console.log(result);
         const newsTitle = document.querySelector(`#newsTitle-${i}`);
         newsTitle.href = result.url;
         newsTitle.innerHTML = result.title;
@@ -92,7 +95,6 @@ const getTopStoriesHome = (data) => {
 
         const abstract = document.querySelector(`#abstract-${i}`);
         abstract.innerHTML = truncateText(result.abstract, 70);
-        console.log(truncateText(result.abstract, 70));
 
     });
 
@@ -115,7 +117,7 @@ const getTopStoriesHome = (data) => {
     </div>
     `;
     const generateArticleGrid = (data) => {
-        const articleCards = data.results.slice(7).map(createArticleCard).join('');
+        const articleCards = data.results.slice(8).map(createArticleCard).join('');
         return `
         <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4 mt-3">
             ${articleCards}
@@ -140,6 +142,17 @@ fetch(url)
 articleSection.addEventListener('change', e => {
 
     const section = e.target.value;
+    if (section === '#') {
+        fetch(homeUrl)
+            .then(Response => Response.json())
+            .then(data => {
+                // console.log(data);
+                getTopStoriesHome(data);
+                sectionTitle.innerHTML = "";
+
+            });
+        return;
+    }
 
     articleUrl = `https://api.nytimes.com/svc/news/v3/content/all/${section}.json?api-key=${api_key}`;
     fetch(articleUrl)

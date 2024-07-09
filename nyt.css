@@ -29,20 +29,13 @@ body{
     height: 60px;
 }
 
-.main{
-    width: 800px;
-}
-
-.img-container{
-    position: relative;
-    /* text-align: start; */
-    color: white;
-}
-
-.bottom-left {
-    position: absolute;
-    bottom: 0px;
-    left: 0px;
+.section-badge .custom-badge{
+    background-color: #172a3c;
+    border:.5px solid #172a3c;
+    padding: 0px 2rem;
+    /* color: #172a3c; */
+    color: #fff;
+    border-radius: 50px;
 }
 
 .form-select{

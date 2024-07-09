@@ -29,20 +29,14 @@
         <div class="container-fluid" style="background-color:#172a3c;">
             <div class="row">
                 <div class="col-12 d-flex flex-wrap justify-content-between p-2">
-                    <!-- <div class="date text-light align-self-end">
-                        <div id="currentTime"></div>
-                    </div> -->
-                    <div class="header-title ms-2">
+                    <div class="header-title ms-2 mb-2">
                         <a class="text-decoration-none text-light" href="index.html">
-                            <h1>New York Times</h1>
+                            <img src="media/logo/output-onlinepngtools.png" class="img-fluid" width="450" alt="New York times Logo">
                         </a>
                     </div>
-                    <div class="col-12 col-sm-6 col-md-4 align-self-center me-3 mb-2">
-                        <div class="input-group">
-                            <select class="form-select form-select-sm" id="article-section" data-article-section>
-                            </select>
-                            <label class="input-group-text border" for="article-section">Article</label>
-                        </div>
+                    <div class="col-md-3 col-lg-2 align-self-center me-3 mb-2">
+                        <select class="form-select form-select-sm" id="article-section" data-article-section>
+                        </select>
                     </div>
                 </div>
             </div>
@@ -51,147 +45,158 @@
     </header>
 
 
-    <!-- header section starts -->
-    <!-- <header>
-        <div class="container">
-            <div class="row mt-5">
-                <div class="col-12 text-center">
-                    <a href="index.html"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/NewYorkTimes.svg/2560px-NewYorkTimes.svg.png" class="img-fluid logo" alt="NewYorkTimes Logo"></a>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12 col-lg-9 mt-3">
-                    <div id="currentTime"></div>
-                    <div id="sectionTitle" class="sectionTitle"></div>
-                </div>
-                <div class="col-12 col-lg-3 text-end">
-                    <div class="input-group">
-                        <select class="form-select form-select-sm" id="article-section" data-article-section>
-                        </select>
-                        <label class="input-group-text" for="article-section">Article</label>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <hr class="text-primary">
-    </header> -->
-    <!-- header section ends -->
     <main>
         <div class="container mb-5">
             <div class="row mt-3">
                 <div class="col">
-                    <div class="date">
-                        <div id="currentTime"></div>
-                    </div>
+                    <div id="currentTime"></div>
                     <div id="sectionTitle" class="sectionTitle"></div>
                 </div>
-                <hr class="text-danger-emphasis">
+                <hr class="text-danger-emphasis border-2">
             </div>
             <div class="row">
-                <div class="col-12 col-xl-7">
+                <div class="col-12 col-xl-7 col-lg-6">
                     <!-- top 2 articles -->
-                    <div class="article-0 my-3">
+                    <!-- article 0 -->
+                    <article class="article-0 mt-3">
                         <h2 class="fw-bold"><a id="newsTitle-0" href=''></a></h2>
-                        <div class="img-container">
+                        <figure class="img-container">
                             <img src="" alt="" id="img-0" class="img-fluid main">
-                            <div class="bottom-left bg-dark bg-opacity-75 p-3 titleSection-0"></div>
-                        </div>
-                        <figcaption class="figure-caption" id="copyright-0"></figcaption>
+                            <figcaption class="figure-caption" id="copyright-0"></figcaption>
+                        </figure>
                         <p class="fs-4" id="abstract-0"></p>
-                    </div>
-                    <hr class="text-primary">
-                    <div class="article-1 mt-4">
+                        <div class="d-flex gap-3 section-badge mt-0">
+                            <h5><span class="titleSection-0 custom-badge pb-1"></span></h5>
+                        </div>
+                    </article>
+                    <hr class="text-danger-emphasis">
+                    <!-- article 1 -->
+                    <article class="article-1 my-4">
                         <h2 class="fw-bold"><a id="newsTitle-1" href=''></a></h2>
-                        <div class="img-container">
+                        <figure class="img-container">
                             <img src="" alt="" id="img-1" class="img-fluid main">
-                            <div class="bottom-left bg-dark bg-opacity-75 p-3 titleSection-1"></div>
-                        </div>
-                        <figcaption class="figure-caption" id="copyright-1"></figcaption>
+                            <figcaption class="figure-caption" id="copyright-1"></figcaption>
+                        </figure>
                         <p class="fs-4" id="abstract-1"></p>
-                    </div>
+                        <div class="d-flex gap-3 section-badge mt-0">
+                            <h5><span class="titleSection-1 custom-badge pb-1"></span></h5>
+                        </div>
+                    </article>
                 </div>
-                <!-- article in aside -->
-                <div class="col-12 col-xl-5 my-3">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-12 col-lg-6 article-2 mb-5">
-                                <div class="img-container">
-                                    <img src="" alt="" id="img-2" class="img-fluid article">
-                                    <div class="bottom-left bg-dark bg-opacity-75 p-3 titleSection-2"></div>
-                                </div>
-                                <figcaption class="figure-caption" id="copyright-2"></figcaption>
-                            </div>
-                            <div class="col-12 col-lg-6">
-                                <div class="contents mt-2">
 
+                <!-- article in aside -->
+                <div class="col-12 col-xl-5 col-lg-6 y-3">
+                    <div class="container">
+                        <article class="row mb-3">
+                            <div class="col-12 col-md-6 article-2">
+                                <figure class="img-container">
+                                    <img src="" alt="" id="img-2" class="img-fluid article">
+                                    <figcaption class="figure-caption" id="copyright-2"></figcaption>
+                                </figure>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <header class="mt-2">
                                     <h5 class="fw-bold"><a id="newsTitle-2" href=''></a></h5>
-                                    <p id="abstract-2"></p>
+                                </header>
+                                <p id="abstract-2"></p>
+                                <div class="section-badge">
+                                    <span class="titleSection-2 custom-badge pb-1"></span>
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12 col-lg-6 article-3 mb-5">
-                                <div class="img-container">
+                        </article>
+
+                        <article class="row mb-3">
+                            <div class="col-12 col-md-6 article-3">
+                                <figure class="img-container">
                                     <img src="" alt="" id="img-3" class="img-fluid article">
-                                    <div class="bottom-left bg-dark bg-opacity-75 p-3 titleSection-3"></div>
-                                </div>
-                                <figcaption class="figure-caption" id="copyright-3"></figcaption>
+                                    <figcaption class="figure-caption" id="copyright-3"></figcaption>
+                                </figure>
                             </div>
-                            <div class="col-12 col-lg-6">
-                                <div class="contents mt-2">
+                            <div class="col-12 col-md-6">
+                                <header class="mt-2">
                                     <h5 class="fw-bold"><a id="newsTitle-3" href=''></a></h5>
-                                    <p id="abstract-3"></p>
+                                </header>
+                                <p id="abstract-3"></p>
+                                <div class="section-badge">
+                                    <span class="titleSection-3 custom-badge pb-1"></span>
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12 col-lg-6 article-4 mb-5">
-                                <div class="img-container">
+                        </article>
+
+                        <article class="row mb-3">
+                            <div class="col-12 col-md-6 article-4">
+                                <figure class="img-container">
                                     <img src="" alt="" id="img-4" class="img-fluid article">
-                                    <div class="bottom-left bg-dark bg-opacity-75 p-3 titleSection-4"></div>
-                                </div>
-                                <figcaption class="figure-caption" id="copyright-4"></figcaption>
+                                    <figcaption class="figure-caption" id="copyright-4"></figcaption>
+                                </figure>
                             </div>
-                            <div class="col-12 col-lg-6">
-                                <div class="contents mt-2">
+                            <div class="col-12 col-md-6">
+                                <header class="mt-2">
                                     <h5 class="fw-bold"><a id="newsTitle-4" href=''></a></h5>
-                                    <p id="abstract-4"></p>
+                                </header>
+                                <p id="abstract-4"></p>
+                                <div class="section-badge">
+                                    <span class="titleSection-4 custom-badge pb-1"></span>
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12 col-lg-6 article-5 mb-5">
-                                <div class="img-container">
+                        </article>
+
+                        <article class="row mb-3">
+                            <div class="col-12 col-md-6 article-5">
+                                <figure class="img-container">
                                     <img src="" alt="" id="img-5" class="img-fluid article">
-                                    <div class="bottom-left bg-dark bg-opacity-75 p-3 titleSection-5"></div>
-                                </div>
-                                <figcaption class="figure-caption" id="copyright-5"></figcaption>
+                                    <figcaption class="figure-caption" id="copyright-5"></figcaption>
+                                </figure>
                             </div>
-                            <div class="col-12 col-lg-6">
-                                <div class="contents mt-2">
+                            <div class="col-12 col-md-6">
+                                <header class="mt-2">
                                     <h5 class="fw-bold"><a id="newsTitle-5" href=''></a></h5>
-                                    <p id="abstract-5"></p>
+                                </header>
+                                <p id="abstract-5"></p>
+                                <div class="section-badge">
+                                    <span class="titleSection-5 custom-badge pb-1"></span>
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12 col-lg-6 article-6 mb-5">
-                                <div class="img-container">
+                        </article>
+
+                        <article class="row mb-3">
+                            <div class="col-12 col-md-6 article-6">
+                                <figure class="img-container">
                                     <img src="" alt="" id="img-6" class="img-fluid article">
-                                    <div class="bottom-left bg-dark bg-opacity-75 p-3 titleSection-6"></div>
-                                </div>
-                                <figcaption class="figure-caption" id="copyright-6"></figcaption>
+                                    <figcaption class="figure-caption" id="copyright-6"></figcaption>
+                                </figure>
                             </div>
-                            <div class="col-12 col-lg-6">
-                                <div class="contents mt-2">
+                            <div class="col-12 col-md-6">
+                                <header class="mt-2">
                                     <h5 class="fw-bold"><a id="newsTitle-6" href=''></a></h5>
-                                    <p id="abstract-6"></p>
+                                </header>
+                                <p id="abstract-6"></p>
+                                <div class="section-badge">
+                                    <span class="titleSection-6 custom-badge pb-1"></span>
                                 </div>
                             </div>
-                        </div>
+                        </article>
+
+                        <article class="row mb-3">
+                            <div class="col-12 col-md-6 article-7">
+                                <figure class="img-container">
+                                    <img src="" alt="" id="img-7" class="img-fluid article">
+                                    <figcaption class="figure-caption" id="copyright-7"></figcaption>
+                                </figure>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <header class="mt-2">
+                                    <h5 class="fw-bold"><a id="newsTitle-7" href=''></a></h5>
+                                </header>
+                                <p id="abstract-7"></p>
+                                <div class="section-badge">
+                                    <span class="titleSection-7 custom-badge pb-1"></span>
+                                </div>
+                            </div>
+                        </article>
                     </div>
                 </div>
-                <hr class="text-primary">
+                <hr class="text-danger-emphasis border-5">
                 <!-- the rest of top articles second row -->
                 <h2>More News</h2>
                 <div data-article></div>
@@ -205,7 +210,7 @@
         <div class="container mt-3">
             <div class="row">
                 <div class="col-12 text-center my-3 text-white">
-                    <footer>&copy;2023 Emiri Sato</footer>
+                    <footer>&copy;2024 Emiri Sato</footer>
                 </div>
             </div>
         </div>
