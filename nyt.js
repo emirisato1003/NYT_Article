@@ -16,7 +16,7 @@ const getNytSection = (data) => {
 
 // function to get selected article from select form
 const getSelectedSectionArticle = (data) => {
-    console.log(data);
+    // console.log(data);
     sectionTitle.innerHTML = `<h1>${data.results[0].section}</h1>`;
 
     data.results.slice(0, 8).forEach((result, i) => {
@@ -74,10 +74,9 @@ const truncateText = (text, maxLength) =>
 
 // function to get top articles for home page
 const getTopStoriesHome = (data) => {
-    // console.log(data.results[0])
     // show article in the main
     data.results.slice(0, 8).forEach((result, i) => {
-        console.log(result);
+        // console.log(result);
         const newsTitle = document.querySelector(`#newsTitle-${i}`);
         newsTitle.href = result.url;
         newsTitle.innerHTML = result.title;
@@ -99,25 +98,28 @@ const getTopStoriesHome = (data) => {
     });
 
     // to create article cards
-    const createArticleCard = (article) => `
+    const createArticleCard = (articles) =>
+        `
     <div class="col mb-3">
         <div class="card h-100">
-            <img src="${article.multimedia[1].url}" class="card-img-top" alt="${article.multimedia[0]?.caption?.length > 100 ? article.multimedia[1].caption : article.title}">
-            <span class="text-secondary text-center"><small>${article.multimedia[2]?.copyright || ''}</small></span>
+            <img src="${articles.multimedia[1]?.url || ''}" class="card-img-top" alt="${articles.multimedia[0]?.caption?.length > 100 ? articles.multimedia[1].caption : articles.title}">
+            <span class="text-secondary text-center"><small>${articles.multimedia[2]?.copyright || ''}</small></span>
             <div class="card-body">
-                <a href='${article.url}'>
-                    <h5 class="card-title fw-bold">${article.title}</h5>
+                <a href='${articles.url}'>
+                    <h5 class="card-title fw-bold">${articles.title}</h5>
                 </a>
-                <p class="card-text">${article.abstract}</p>
+                <p class="card-text">${articles.abstract}</p>
             </div>
             <div class="card-footer">
-            <small class="text-body-secondary">${article.byline}</small>
+            <small class="text-body-secondary">${articles.byline}</small>
             </div>
         </div>
     </div>
     `;
+
     const generateArticleGrid = (data) => {
-        const articleCards = data.results.slice(8).map(createArticleCard).join('');
+        const articleCards = data.results.slice(8).map(article => createArticleCard(article)).join('');
+        console.log(articleCards)
         return `
         <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4 mt-3">
             ${articleCards}
@@ -126,6 +128,9 @@ const getTopStoriesHome = (data) => {
     };
     dataArticle.innerHTML = generateArticleGrid(data);
 };
+
+
+
 
 // set valuable for api key
 api_key = 'Nl1D97fits0uHLJl0YsJ2mWL4UL1Bv5J';
@@ -168,7 +173,6 @@ fetch(homeUrl)
     .then(Response => Response.json())
     .then(data => {
         // console.log(data);
-
         getTopStoriesHome(data);
     });
 
