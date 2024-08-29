@@ -99,10 +99,10 @@ const getTopStoriesHome = (data) => {
 
     // to create article cards
     const createTopArticleCards = (articles) =>
-    `
+        `
     <div class="col mb-3">
         <div class="card h-100">
-            <img src="${articles.multimedia?.[1]?.url || ''}" class="card-img-top" alt="${articles.multimedia?.[0]?.caption?.length > 100 ? articles.multimedia?.[1].caption : articles.title}">
+            <img src="${articles.multimedia?.[1]?.url || 'media/logo/New-York-Times-emblem-500x400.jpg'}" class="card-img-top" alt="${articles.multimedia?.[0]?.caption?.length > 100 ? articles.multimedia?.[1].caption : articles.title}">
             <span class="text-secondary text-center"><small>${articles.multimedia?.[2]?.copyright || ''}</small></span>
             <div class="card-body">
                 <a href='${articles.url}'>
