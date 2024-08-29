@@ -98,12 +98,12 @@ const getTopStoriesHome = (data) => {
     });
 
     // to create article cards
-    const createArticleCard = (articles) =>
-        `
+    const createTopArticleCards = (articles) =>
+    `
     <div class="col mb-3">
         <div class="card h-100">
-            <img src="${articles.multimedia[1]?.url || ''}" class="card-img-top" alt="${articles.multimedia[0]?.caption?.length > 100 ? articles.multimedia[1].caption : articles.title}">
-            <span class="text-secondary text-center"><small>${articles.multimedia[2]?.copyright || ''}</small></span>
+            <img src="${articles.multimedia?.[1]?.url || ''}" class="card-img-top" alt="${articles.multimedia?.[0]?.caption?.length > 100 ? articles.multimedia?.[1].caption : articles.title}">
+            <span class="text-secondary text-center"><small>${articles.multimedia?.[2]?.copyright || ''}</small></span>
             <div class="card-body">
                 <a href='${articles.url}'>
                     <h5 class="card-title fw-bold">${articles.title}</h5>
@@ -118,8 +118,7 @@ const getTopStoriesHome = (data) => {
     `;
 
     const generateArticleGrid = (data) => {
-        const articleCards = data.results.slice(8).map(article => createArticleCard(article)).join('');
-        console.log(articleCards)
+        const articleCards = data.results.slice(8).map(createTopArticleCards).join('');
         return `
         <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4 mt-3">
             ${articleCards}
